@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">酷跑</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main_fragment">MainFragmentActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_nearby_user">NearbyUserActivity</string>
+    <string name="title_activity_club">ClubActivity</string>
+    <string name="title_activity_sport_setting">SportSettingActivity</string>
+    <string name="setp_length_info_1">为估算行走距离和速度,请输入步长</string>
+    <string name="setp_length_info_2">仅供参考</string>
+
+</resources>

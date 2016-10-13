@@ -1,0 +1,229 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/black"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SplashActivity" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dip"
+        android:text="设置"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/shape"
+        android:orientation="horizontal"
+        android:paddingBottom="15dip"
+        android:paddingTop="15dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="灵敏度"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/sensitivity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
+
+        <TextView
+            android:id="@+id/sport_setting_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="低度"
+            android:textColor="@android:color/white" />
+
+        <SeekBar
+            android:id="@+id/sensitivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:max="10"
+            android:maxHeight="5dip"
+            android:minHeight="5dip"
+            android:progress="3" />
+
+        <TextView
+            android:id="@+id/sport_setting_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="高度"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
+        android:text="灵敏度信息"
+        android:textColor="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/shape" >
+
+        <TextView
+            android:id="@+id/sport_setting_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="15dip"
+            android:paddingTop="15dip"
+            android:text="步长"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/step_length_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/sport_setting_step"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@id/sport_setting_step"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/sport_setting_step_length"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
+        android:max="12"
+        android:maxHeight="5dip"
+        android:minHeight="5dip"
+        android:progress="3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
+        android:text="@string/setp_length_info_1"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
+        android:text="@string/setp_length_info_2"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/shape"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="15dip"
+        android:paddingTop="15dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="体重"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/sport_setting_weight_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sport_setting_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
+        android:max="50"
+        android:maxHeight="5dip"
+        android:minHeight="5dip"
+        android:progress="3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
+        android:text="体重信息"
+        android:textColor="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
+        android:layout_marginTop="15dip"
+        android:paddingBottom="15dip"
+        android:paddingTop="15dip" >
+
+        <Button
+            android:id="@+id/sport_setting_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_bg"
+            android:onClick="onClick"
+            android:paddingBottom="5dip"
+            android:paddingLeft="25dip"
+            android:paddingRight="25dip"
+            android:paddingTop="5dip"
+            android:text="保存"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/sport_setting_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/btn_bg"
+            android:onClick="onClick"
+            android:paddingBottom="5dip"
+            android:paddingLeft="25dip"
+            android:paddingRight="25dip"
+            android:paddingTop="5dip"
+            android:text="取消"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</LinearLayout>
