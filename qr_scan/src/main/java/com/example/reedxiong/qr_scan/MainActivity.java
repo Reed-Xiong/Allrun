@@ -1,61 +1,46 @@
 package com.example.reedxiong.qr_scan;
 
-import android.hardware.Camera;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity implements SurfaceHolder.Callback {
-
-    private SurfaceView surfaceView;
-    private SurfaceHolder mHolder;
-    private Camera mCarema;
+public class MainActivity extends AppCompatActivity  {
+    private Button button;
+    private TextView mTextView;
+    private ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
+        button=(Button)findViewById(R.id.button1_red);
+        mTextView=(TextView)findViewById(R.id.result);
+        mImageView=(ImageView)findViewById(R.id.qr_bitmap);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,MipcaActivityCapture.class);
+                startActivityForResult(intent,200);
+            }
+        });
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        mCarema.stopPreview();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mCarema.release();
-    }
-
-
-    @Override
-    public void surfaceCreated(SurfaceHolder surfaceHolder) {
-        try {
-            mCarema.setPreviewDisplay(mHolder);
-        }catch (Exception e){
-            e.printStackTrace();
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==200){
+            if(resultCode==RESULT_OK){
+                Bundle bundle = data.getExtras();
+                //显示扫描到的内容
+                mTextView.setText(bundle.getString("result"));
+                //显示
+                mImageView.setImageBitmap((Bitmap) data.getParcelableExtra("bitmap"));
+            }
         }
-    }
-
-    @Override
-    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
-        // get the size for preview
-        Camera.Parameters paramer = mCarema.getParameters();
-        List<Camera.Size> size = paramer.getSupportedPreviewSizes();
-        Camera.Size mySize = size.get(0);
-        paramer.setPreviewSize(mySize.width,mySize.height);
-        mCarema.setParameters(paramer);
-        mCarema.startPreview();
-
-    }
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-
     }
 }
